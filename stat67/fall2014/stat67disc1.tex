@@ -1,0 +1,315 @@
+\documentclass[mathserif]{beamer}
+\usetheme{Goettingen}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{subfigure}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\title[Stats 67 Discussion]{Stats 67 Discussion 1\\Fall 2014}
+\institute[]{
+University of California - Irvine\\}
+\author[Brian Vegetabile \\UC Irvine]{Brian Vegetabile}
+\date{October 8th, 2014}
+%\maketitle
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}[t]
+\frametitle{Introduction}
+Welcome to the Stat 67 Discussion!
+\newline
+
+\begin{itemize}
+	\item{TA: Brian Vegetabile}
+	\begin{itemize}
+		\item{Second Year PhD Student}
+		\item{email: bvegetab@uci.edu}
+	\end{itemize}
+	
+	\item{Times:}
+	\begin{itemize}
+		\item{Discussion 1 - Wednesday 9:00 - 9:50am, DBH 1300}
+		\item{Discussion 2 - Wednesday 10:00 - 10:50am, DBH 1300}
+	\end{itemize}
+	
+	\item{Office Hours:}
+	\begin{itemize}
+		\item{Mondays, 2:00pm - 4:00pm, DBH 2013}
+		\item{Tuesdays, 12:30pm - 1:30pm, DBH 2032}
+	\end{itemize}
+	\item{Book Website: http://www.openintro.org/stat/}
+\end{itemize}
+
+\end{frame}
+
+\section{Types of Variables}
+
+\begin{frame}[t]
+\frametitle{Types of Variables}
+
+\begin{itemize}
+	\item{Numerical}
+	\begin{itemize}
+		\item{Those variables where the adding, subtracting, averaging of their values makes sense.}
+		\item{Types of Numerical:}
+		\begin{itemize}
+			\item{Continuous}
+			\item{Discrete}
+		\end{itemize}
+		\item{Examples of Numerical:}
+		\begin{itemize}
+			\item{Continuous - Resistance Measurements using an Ohmmeter}
+			\item{Discrete - Counts of users online at specific times}
+		\end{itemize}		
+	\end{itemize}
+	\item{Ordinal}
+	\begin{itemize}
+		\item{Those variables where a natural "category" or "ranking" could exist}
+		\item{Examples}
+		\begin{itemize}
+			\item{State where a particular user claims their residency}
+			\item{Response to a poll question: "Yes", "No", "Don't Know"}
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Examples 1}
+
+\begin{frame}[t]
+\frametitle{Exercise 1.4a}
+\small
+While obesity is measured based on body fat percentage (more than 35\% body fat for women and more than 25\% for men), precisely measuring body fat percentage is difficult. Body mass index (BMI), calculated as the ratio $weight/height^2$, is often used as an alternative indicator for obesity. A common criticism of BMI is that it assumes the same relative body fat percentage regardless of age, sex, or ethnicity. In order to determine how useful BMI is for predicting body fat percentage across age, sex and ethnic groups, researchers studied 202 black and 504 white adults who resided in or near New York City, were ages 20-94 years old, had BMIs of 18-35 kg/m2, and who volunteered to be a part of the study. Participants reported their age, sex, and ethnicity and were measured for weight and height. Body fat percentage was measured by submerging the participants in water.
+\begin{itemize}
+	\item{Identify the variables and their types}
+	\item{Identify the main research question of the study described below}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Exercise 1.4a}
+\begin{itemize}
+	\item{Identify the variables and their types}
+	\begin{itemize}
+		\item<2->{Age - Numerical, Discrete or Continuous}
+		\item<2->{Sex - Categorical}
+		\item<2->{Ethnicity - Categorical}
+		\item<2->{Weight - Numerical, Continuous}
+		\item<2->{Height - Numerical, Continuous}
+		\item<2->{Body Fat Percentage - Numerical, Continuous}
+	\end{itemize}
+	\item{Identify the main research question of the study described below}
+	\begin{itemize}
+		\item<3->{The research question was “How useful is BMI for predicting body fat percentage across age, sex and ethnic groups?”}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Exercise 1.4b}
+In a study of the relationship between socio-economic class and unethical behavior, 129 University of California undergraduates at Berkeley were asked to identify themselves as having low or high social-class by comparing themselves to others with the most (least) money, most (least) education, and most (least) respected jobs. They were also presented with a jar of individually wrapped candies and informed that they were for children in a nearby laboratory, but that they could take some if they wanted. Participants completed unrelated tasks and then reported the number of candies they had taken. It was found that those in the upper-class rank condition took more candy than did those in the lower-rank condition
+\begin{itemize}
+	\item{Identify the variables and their types}
+	\item{Identify the main research question of the study described below}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Exercise 1.4b}
+\begin{itemize}
+	\item{Identify the variables and their types}
+	\begin{itemize}
+		\item<2->{Socio-Economic Status - Categorical}
+		\item<2->{Counts of Candy - Numerical, Discrete}
+	\end{itemize}
+	\item{Identify the main research question of the study described below}
+	\begin{itemize}
+		\item<3->{The research question was ``Is there a difference between the unethical behaviors of people who identify themselves as having low and high social-class rank?''}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Study Design}
+
+\begin{frame}
+\frametitle{Study Design}
+
+Studies \& Experiments
+
+\begin{itemize}
+	\item{Observational Studies}
+	\begin{itemize}
+		\item{Data in observational studies are collected only by monitoring what occurs.  The researchers in this case do not have any control over the treatments or groups to which members are assigned.}
+		\item{Two Types:}
+		\begin{itemize}
+			\item{Prospective: Follows individuals over many years to assess some behavior}
+			\item{Retrospective:  Looks at data after the events have taken place.  }
+		\end{itemize}
+		\item{Generally only sufficient to show associations}
+	\end{itemize}
+	\item{Randomized Experiments}
+	\begin{itemize}
+		\item{Studies where researchers assign treatments to cases are called experiments, when the assignment to treatments is random... randomized experiment}
+		\item{Fundamentally important when trying to show a casual relationhip between variables}
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\section{Examples 2}
+
+\begin{frame}[t]
+\frametitle{Study or Experiment?}
+A study of over 1200 people over age 65 showed that the “owls”, those who go to sleep after 11 p.m. and rise after 8 a.m., tend to be as healthy and intelligent as “larks”, those who go to bed before 11 p.m. and rise before 8 a.m., according to a report in the December 19/26 issue of the British Medical Journal [Vol. 317, pp. 1675–1677]. The researchers also found that owls tend to have higher average income than the early birds.
+\begin{itemize}
+\item{Is this an observational study or an experiment?}
+\item{What kind of answers about the relationship between sleep habits and average income between early birds and owls can be answered?}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Study or Experiment?}
+In a new study, Dr. Matti Uhari and colleagues at the University of Oulu in Finland randomly gave 857 healthy children in daycare centers xylitol in syrup, gum, or a lozenge form, or a placebo gum or syrup in five doses per day for 3 months. According to a report in the October issue of the journal Pediatrics [Vol. 102, pp. 879–884, 971–972, 974–975], the incidence of ear infections was reduced by 40\% in children given xylitol chewing gum, 30\% in those given syrup and 20\% in those given lozenges when compared to children given a placebo.
+\begin{itemize}
+\item{Is this an observational study or an experiment?}
+\item{What kind relationship between ear infections and the type of medicine can be inferred?}
+\end{itemize}
+\end{frame}
+
+\section{Sampling Types}
+
+\begin{frame}[t]
+\frametitle{Types of Sampling}
+Almost all statistical methods rely on some sort of randomness.  There are three different sampling types:
+\begin{itemize}
+	\item{Simple random sampling.}
+	\begin{itemize}
+		\item{As the name suggests... Simple!  Just sample randomly from data}
+	\end{itemize}
+	\item{Stratified Sample}
+	\begin{itemize}
+		\item{Find representative groups or strata and sample evenly from each group/strata}
+	\end{itemize}
+	\item{Clustered sampling.}
+	\begin{itemize}
+		\item{Again group, but no longer the requirement to sample from all groups}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Experiments}
+
+\begin{frame}[t]
+\frametitle{Principles of Experimental Design}
+The four principles....
+\begin{itemize}
+	\item{Controlling}
+	\begin{itemize}
+		\item{Controlling the treatment groups.  }
+	\end{itemize}
+	\item{Randomization}
+	\begin{itemize}
+		\item{Random assignment of treatment groups to account for variables that cannot be controlled.}
+	\end{itemize}
+	\item{Replication}
+	\begin{itemize}
+		\item{Repeating the experiment on as many individuals as possible.  Or alternatively the ability to repeat the experiment by future experimenters}
+	\end{itemize}
+	\item{Blocking}
+	\begin{itemize}
+		\item{First group based on characteristics into blocks, then randomize within assignment within the blocks.  One example is to segregate between high risk and low risk to some stimulus and then see the effect at both levels.}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Real World Examples}
+
+\begin{frame}[t]
+\frametitle{Stats in CS: A/B Testing}
+A/B testing is jargon for a randomized experiment with two variants, A and B, which are the control and treatment in the controlled experiment.
+\begin{itemize}
+	\item{A form of statistical hypothesis testing, essentially two-sample hypothesis testing}
+	\item{In User Experience Design, Two versions of a product (A and B) are compared, which are identical except for one variation that might affect a user's behavior. }
+	\item{Version A might be the currently used version (control), while Version B is modified in some respect (treatment)}
+	\item{A little history}
+	\begin{itemize}
+		\item{Google data scientists ran their first A/B test at the turn of the millennium to determine the optimum number of results to display on a search engine results page.}
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Stats in CS: A/B Testing}
+How does A/B Testing satisfy the principles of experimental design.
+	\begin{itemize}
+		\item{How could A/B Testing implement control?}
+		\item{How could A/B Testing implement randomization?}
+		\item{How could A/B Testing implement replication?}
+		\item{How could A/B Testing implement blocking?}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Stats in CS: Facebook Emotion Experiment}
+\begin{itemize}
+	\item{Paper Titled: Experimental evidence of massive-scale emotional contagion through social networks}
+	\item{Study Overview:}
+	\begin{itemize}
+		\item{The experiment manipulated the extent to which people $(N = 689,003)$ were exposed to emotional expressions in their News Feed. }
+		\item{The goal was to test whether exposure to emotions led people to change their own posting behaviors, in particular whether exposure to emotional content led people to post content that was consistent with that exposure.}
+		\item{Two parallel experiments were conducted for positive and negative emotion.  One in which exposure to friends' positive emotional content in their News Feed was reduced, and one in which the exposure to negative emotional content was reduced.}
+		\item{Positive or negative emotional was determined if there was at least one positive or negative word, as defined by the Linguistic Inquiry and Word Count software.}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Stats in CS: Facebook Emotion Experiment}
+How does Facebook Emotion Experiment satisfy the principles of experimental design.
+	\begin{itemize}
+		\item{How did the experiment implement control?}
+		\item{How did the experiment randomization?}
+		\item{How did the experiment replication?}
+		\item{How did the experiment implement blocking?}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Stats in CS: Facebook Emotion Experiment}
+What was wrong with this experiment?  
+
+\begin{itemize}
+	\item<2->{Prime example of why study design matters}
+	\item<2->{No informed consent, didn't inform users that they were part of a study. }
+	\item<3->{
+	\includegraphics[scale=.40]{facebookbad.pdf}}
+	\item<4->{Great Critique of the study:
+	\footnotesize www.ischool.berkeley.edu/newsandevents/news/20140828facebookexperiment}
+\end{itemize}
+\end{frame}
+
+\end{document}
